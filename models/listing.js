@@ -8,8 +8,8 @@ const listingSchema = new Schema({
   },
   description: String,
   image: {
-    filename : String,
     url : String,
+    filename : String
   },
 
   price: Number,
@@ -20,7 +20,22 @@ const listingSchema = new Schema({
       type : Schema.Types.ObjectId,
       ref: "Review"
     }
-  ]
+  ],
+  owner : {
+    type : Schema.Types.ObjectId,
+    ref:"User"
+  },
+  geometry : {
+    type : {
+      type : String,
+      enum : ['point'],
+      required : true
+    },
+    coordinates : {
+      type : [Number],
+      required : true
+    }
+  }
 });
 
 // called by another function

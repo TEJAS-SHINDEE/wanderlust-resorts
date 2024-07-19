@@ -3,9 +3,9 @@
     <div class="col-8 offset-2">
         <br>
     <h3>Create New Listing's</h3>
-    <form method="POST" action="/listings"  novalidate class="needs-validation" >
+    <form enctype="multipart/form-data" method="POST" action="/listings"  novalidate class="needs-validation" >
         <div class="mb-3">
-            <label for="title" class="form-lablel"></label>
+            <label for="title" class="form-label"></label>
             <input name="listing[title]" 
             placeholder="Add Catchy Title" 
             type="text" 
@@ -16,7 +16,7 @@
         </div>
         
         <div class="mb-3">
-            <label for="description" class="form-lablel">Description</label>
+            <label for="description" class="form-label">Description</label>
             <textarea   name="listing[description]" 
                         class="form-control"
                         type="text" 
@@ -25,11 +25,20 @@
             <div class="valid-feedback">Looks Good!</div>
         </div>
         
-        <div class="mb-3">
-            <label for="image" class="form-lablel">Image Link</label>
+        <!-- <div class="mb-3">
+            <label for="image" class="form-lablel">upload Listing Image </label>
             <input name="listing[image]" 
-            placeholder="Enter Image link/URL" 
-            type="text" 
+            type="file" 
+            class="form-control"
+            required>
+            <div class="invalid-feedback">Please Provide Valid Link/URL</div>
+            <div class="valid-feedback">Looks Good!</div>
+        </div> -->
+
+        <div class="mb-3">
+            <label for="image" class="form-label">upload Listing Image </label>
+            <input name="listing[image]" 
+            type="file" 
             class="form-control"
             required>
             <div class="invalid-feedback">Please Provide Valid Link/URL</div>
@@ -38,7 +47,7 @@
 
         <div class="row">
             <div class="mb-3 col-md-4">
-                <label for="price" class="form-lablel">Price</label>
+                <label for="price" class="form-label">Price</label>
                 <input name="listing[price]" 
                 placeholder="1200" 
                 type="number" 
@@ -49,7 +58,7 @@
             </div>
     
             <div class="mb-3 col-md-8">
-                <label for="country" class="form-lablel">Country</label>
+                <label for="country" class="form-label">Country</label>
                 <input name="listing[country]" 
                 placeholder="India" 
                 class="form-control"

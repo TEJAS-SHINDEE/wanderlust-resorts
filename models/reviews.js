@@ -4,7 +4,12 @@ const Schema = mongoose.Schema;
 const reviewSchema = new Schema({
     Comment : String,
     rating : Number,
-    createdAt : Date
+    createdAt : Date,
+
+    author : {
+        type: Schema.Types.ObjectId,
+        ref : "User",
+    },
 });
 
 
